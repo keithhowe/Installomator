@@ -1235,13 +1235,6 @@ cormorant)
     appNewVersion=$(curl -fs https://eclecticlight.co/downloads/ | grep zip | grep -o -E "$name [0-9.]*" | awk '{print $2}')
     expectedTeamID="QWY4LRW926"
     ;;
-cricutdesignspace)
-    name="Cricut Design Space"
-    type="dmg"
-    downloadURL=https://staticcontent.cricut.com/a/software/osx-native/$(curl -fs https://s3-us-west-2.amazonaws.com/staticcontent.cricut.com/a/software/osx-native/latest.json | python -m json.tool | awk -F\" '/rolloutInstallFile/{print $4; exit}')
-    appNewVersion=$(curl -fs https://s3-us-west-2.amazonaws.com/staticcontent.cricut.com/a/software/osx-native/latest.json | python -m json.tool | awk -F\" '/rolloutVersion/{print $4; exit}')
-    expectedTeamID="25627ZFVT7"
-    ;;
 cryptomator)
     name="Cryptomator"
     type="dmg"
